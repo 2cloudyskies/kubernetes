@@ -12,3 +12,35 @@ There seems to be be some problem on the master.yml playbook in printing out the
 <pre><code>kubeadm token create --print-join-command</code></pre>
 
 Original description of installation process is [here](https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/)
+
+#### Preparing the Ubuntu hosts
+Below are some of the steps to prepare the Ubuntu hosts
+
+<pre><code>sudo apt update
+sudo apt install net-tools
+sudo apt install openssh-server
+sudo ufw disable
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo systemctl restart ssh
+
+## set root password, by default root user has no password in Ubuntu preventing SSH login
+sudo passwd
+
+## install Ansible<span style="color:blue">*</span>
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+
+## install Git<span style="color:blue">*</span>
+sudo apt install git
+
+## generate public/private ssh key pair<span style="color:blue">*</span>
+ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
+
+## copy public key to the remote ansible targets<span style="color:blue">*</span>
+ssh-copy-id remote_username@server_ip_address
+
+
+<span style="color:blue">*-only on jump host</span>
+</code></pre>
