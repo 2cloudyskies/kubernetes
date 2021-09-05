@@ -7,8 +7,8 @@ Pre-requisites:
 - Playbooks have been modified assuming root SSH access to the K8S nodes is available from the Ubuntu host executing the playbooks
 
 #### Note
-There seems to be be some problem on the master.yml playbook in printing out the kubeadm join output post kubeadm init. As a workaround, after executing master.yml playbook, ssh to the K8S master node and run the following
+There seems to be be some problem on the master.yml playbook in printing out the <span style="color:blue">kubeadm join</span> output post <span style="color:blue">kubeadm init</span>. As a workaround, after executing master.yml playbook, ssh to the K8S master node and run the following to the the output of <span style="color:blue">kubeadm join</span> for use on the worker node.
 
-kubeadm token create --print-join-command
+<pre><code>kubeadm token create --print-join-command</code></pre>
 
 Original description of installation process is [here](https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/)
