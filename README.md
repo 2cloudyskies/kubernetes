@@ -6,7 +6,7 @@ Pre-requisites:
 - Minimum 1 Ubuntu master, 1 Ubuntu worker nodes running Ubuntu 18.04 or 20.04 and have IP connectivity to each other
 - Playbooks have been modified assuming root SSH access to the K8S nodes is available from the Ubuntu host executing the playbooks
 
-##### Note
+#### Note
 There seems to be be some problem on the master.yml playbook in printing out the kubeadm join output post kubeadm init. As a workaround, after executing master.yml playbook, ssh to the K8S master node and run the following
 
 kubeadm token create --print-join-command
