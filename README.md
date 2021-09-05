@@ -11,7 +11,7 @@ There seems to be be some problem on the master.yml playbook in printing out the
 
 <pre><code>kubeadm token create --print-join-command</code></pre>
 
-Alternatively on the Ubuntu host running the playbooks, there should be a <span style="color:blue">/tmp/kubernetes_join_command</span> file that contains the actual <span style="color:blue">kubeadm join</span> output
+Alternatively on the Ubuntu host running the playbooks, there should be a <span style="color:blue">/tmp/kubernetes_join_command</span> file that contains the actual <span style="color:blue"> kubeadm join </span> output
 
 Original description of installation process is [here](https://buildvirtual.net/deploy-a-kubernetes-cluster-using-ansible/)
 
